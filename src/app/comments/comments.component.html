@@ -1,0 +1,42 @@
+
+
+      <div>
+        <h2 style="color: #2E7EBF;border: #2E7EBF;"><b> Cometarios</b></h2>
+        <h6><b> {{total}} cometarios registrados</b></h6>
+      </div>
+      <br>
+      <table class="highlight">
+        <thead>
+          <tr style="background-color: #52B848;color: white;">
+              <th>ID</th>
+              <th>Nombre</th>
+              <th>Correo Electrónico</th>
+              <th>Página Web</th>
+              <th>Comentarios</th>
+              <th></th>
+          </tr>
+        </thead>
+
+        <tbody>
+          <tr *ngFor="let com of comments">
+            <td>{{com.id}}</td>
+            <td>{{com.name}}</td>
+            <td>{{com.email}}</td>
+            <td>{{com.website}}</td>
+            <td>{{com.content}}</td>
+            <td>
+                <a class="waves-effect waves-light btn blue" routerLink="/home/edit/{{com.id}}"><i class="material-icons left">edit</i></a>
+            </td>
+           
+          </tr>
+          
+        </tbody>
+      </table>
+      
+  <ul class="pagination">
+    <li class="disabled"><a href="#!"><i class="material-icons">chevron_left</i></a></li>
+    <li class="waves-effect" *ngFor="let p of pags" (click)="paginate(p)"><a>{{p}}</a></li>
+    
+    <li class="waves-effect"><a href="#!"><i class="material-icons">chevron_right</i></a></li>
+  </ul>
+            

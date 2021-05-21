@@ -1,0 +1,48 @@
+<div class="container">
+   
+  <h2 style="color: #2E7EBF;border: #2E7EBF;"><b> Mantenimiento comentarios</b></h2>
+    <div class="row">
+        <form class="col s12" (ngSubmit)="onSubmit()" #editForm="ngForm">
+            <h4 style="color: #52B848;"><b> {{user}}</b></h4>
+            <div class="row">
+                <div class="input-field col s6">
+                  <i class="material-icons prefix">person_add</i>
+                  <input type="text" id="name" class="materialize-textarea" [(ngModel)]="source.name" name="name" class="validate" required>
+                  <label for="name">Nombre</label>
+                </div>
+              </div>
+          <div class="row">
+            <div class="input-field col s6">
+              <i class="material-icons prefix">email</i>
+              <input type="text" id="email" class="materialize-textarea" [(ngModel)]="source.email" name="email" class="validate" required>
+              <label for="email">Correo electrónico</label>
+            </div>
+          </div>
+
+          <div class="row">
+            <div class="input-field col s6">
+              <i class="material-icons prefix">web</i>
+              <input type="text" id="website" class="materialize-textarea" [(ngModel)]="source.website" name="website" class="validate" required>
+              <label for="website">Página web</label>
+            </div>
+          </div>
+
+          <div class="row">
+            <div class="input-field col s6">
+              <i class="material-icons prefix">web_asset</i>
+              <input type="text" id="content" class="materialize-textarea" [(ngModel)]="source.content" name="content" class="validate" required>
+              <label for="content">Comentarios</label>
+            </div>
+          </div>
+          <div class="row">
+            <div class="input-field col s6">
+              <button class="btn waves-effect waves-light" routerLink="/home/comments">CANCELAR</button>
+          <button class="btn waves-effect waves-light" type="submit"  [disabled]="!editForm.form.valid" style="background-color: #52B848;float: right;">{{type}}</button>
+            </div>
+          </div>
+
+          
+        </form>
+      </div>
+
+</div>
